@@ -1,0 +1,12 @@
+#Terraform sensitive files
+terraform.tfvars
+*.tfstate
+*.tfstate.backup
+.terraform/
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Zip files
+*.zip

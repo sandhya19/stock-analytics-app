@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>📈 Stock Price Tracker</title>
+  <style>
+    body { font-family: Arial; padding: 2rem; background: #f7f9fb; }
+    input, button { padding: 10px; margin-right: 10px; }
+    #output { margin-top: 2rem; font-size: 1.2rem; }
+  </style>
+</head>
+<body>
+
+  <h2>📊 Stock Price Tracker</h2>
+  <input type="text" id="symbolInput" placeholder="Enter stock symbol (e.g., AAPL)" />
+  <button onclick="getStockPrice()">Fetch</button>
+
+  <div id="output"></div>
+
+  <script>
+    async function getStockPrice() {
+      const symbol = document.getElementById("symbolInput").value.toUpperCase();
+      const output = document.getElementById("output");
+
+      if (!symbol) {
+        output.innerHTML = "❗ Please enter a symbol.";
+        return;
+      }
+
+      try {
+        const response = await fetch(`https://x0ll9mkcb5.execute-api.eu-west-2.amazonaws.com/prod/fetch?symbol=${symbol}`);
+        const data = await response.json();
+
+        if (data.price) {
+          output.innerHTML = `
+            ✅ <strong>${data.symbol}</strong><br/>
+            Price: <strong>$${parseFloat(data.price).toFixed(2)}</strong><br/>
+            Time: <strong>${data.timestamp}</strong>
+          `;
+        } else {
+          output.innerHTML = "❗ No data found or invalid symbol.";
+        }
+      } catch (error) {
+        output.innerHTML = "⚠️ Error fetching stock data.";
+      }
+    }
+  </script>
+
+</body>
+</html>

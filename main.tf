@@ -2,6 +2,16 @@ provider "aws" {
   region = "eu-west-2"
 }
 
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"  # requires 5.x to support object_ownership
+    }
+  }
+}
+
+
 data "archive_file" "lambda_package" {
   type        = "zip"
   source_file = "${path.module}/lambda/main.py"

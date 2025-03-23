@@ -1,13 +1,16 @@
+<!-- Version 2 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>📈 Stock Price Tracker</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body { font-family: Arial; padding: 2rem; background: #f7f9fb; }
     input, button { padding: 10px; margin-right: 10px; }
     #output { margin-top: 2rem; font-size: 1.2rem; }
+    canvas { margin-top: 2rem; }
   </style>
 </head>
 <body>
@@ -17,8 +20,11 @@
   <button onclick="getStockPrice()">Fetch</button>
 
   <div id="output"></div>
+  <canvas id="stockChart" width="400" height="200"></canvas>
 
   <script>
+    let chart;
+
     async function getStockPrice() {
       const symbol = document.getElementById("symbolInput").value.toUpperCase();
       const output = document.getElementById("output");
@@ -38,10 +44,51 @@
             Price: <strong>$${parseFloat(data.price).toFixed(2)}</strong><br/>
             Time: <strong>${data.timestamp}</strong>
           `;
+
+          const ctx = document.getElementById("stockChart").getContext("2d");
+
+          // Destroy existing chart before creating a new one
+          if (chart) chart.destroy();
+
+          chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+              labels: [data.timestamp],
+              datasets: [{
+                label: `${data.symbol} Price`,
+                data: [parseFloat(data.price)],
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderWidth: 2,
+                tension: 0.4,
+                fill: true
+              }]
+            },
+            options: {
+              responsive: true,
+              scales: {
+                x: {
+                  title: {
+                    display: true,
+                    text: 'Time'
+                  }
+                },
+                y: {
+                  title: {
+                    display: true,
+                    text: 'Price (USD)'
+                  },
+                  beginAtZero: false
+                }
+              }
+            }
+          });
+
         } else {
           output.innerHTML = "❗ No data found or invalid symbol.";
         }
       } catch (error) {
+        console.error(error);
         output.innerHTML = "⚠️ Error fetching stock data.";
       }
     }

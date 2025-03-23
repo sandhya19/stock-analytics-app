@@ -51,6 +51,35 @@ _(Replace this with your actual CloudFront URL)_
 git clone https://github.com/sandhya19/stock-analytics-app.git
 cd stock-analytics-app
 
+**### 2. Configure Secrets**
+Create a file named terraform.tfvars with the following:
+
+alpha_vantage_api_key = "your_alpha_vantage_api_key"
+
+Ensure you also have AWS credentials configured.
+
+**### 3.Deploy with Terraform**
+
+terraform init
+terraform apply -auto-approve
 
 
+**Usage**
+Visit the CloudFront URL to access the frontend
+Enter any stock symbol (e.g., AAPL, TSLA) and click Fetch
+The backend Lambda will retrieve and store data, which can be extended for analytics
+
+🔒 Security Considerations
+CORS configured to allow browser access to API Gateway
+No credentials exposed in frontend
+HTTPS via CloudFront default certificate
+Public read access limited only to frontend assets
+
+📌 Learning Highlights
+✅ Hands-on experience with AWS services
+✅ Writing & deploying AWS Lambda in Python
+✅ Using Terraform for declarative infrastructure
+✅ Handling CORS and API integration
+✅ Debugging CloudWatch logs effectively
+✅ Creating a public-facing cloud-native app
 

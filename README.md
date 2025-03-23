@@ -41,3 +41,16 @@ _(Replace this with your actual CloudFront URL)_
 [ S3 + CloudFront ] ⬇ Static HTML/JS ⬇ [ API Gateway ] ⬇ [ AWS Lambda ] ⬇ [ DynamoDB ] ⬇ [ Alpha Vantage API ]
 
 
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Clone and Configure
+
+```bash
+git clone https://github.com/sandhya19/stock-analytics-app.git
+cd stock-analytics-app
+
+
+
+

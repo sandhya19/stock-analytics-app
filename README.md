@@ -57,6 +57,7 @@ S3 (static frontend) + CloudFront (CDN & HTTPS)
 ```bash
 git clone https://github.com/sandhya19/stock-analytics-app.git
 cd stock-analytics-app
+```
 
 ## 2. Configure Secrets
 Create a file named terraform.tfvars with the following:

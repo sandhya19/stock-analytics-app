@@ -51,7 +51,7 @@ _(Replace this with your actual CloudFront URL)_
 git clone https://github.com/sandhya19/stock-analytics-app.git
 cd stock-analytics-app
 
-** 2. Configure Secrets**
+**2. Configure Secrets**
 Create a file named terraform.tfvars with the following:
 
 alpha_vantage_api_key = "your_alpha_vantage_api_key"

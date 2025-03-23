@@ -6,7 +6,7 @@ A fully serverless, secure, and scalable application that fetches real-time stoc
 
 ## 🎥 Live Demo
 
-![Live Demo](demo/demo.gif)
+![Live Demo](Demo/Demo.gif)
 
 ---
 

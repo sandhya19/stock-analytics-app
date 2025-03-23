@@ -84,10 +84,10 @@ Public read access limited only to frontend assets
 
 ## 📌 Learning Highlights
 
-✅ Hands-on experience with AWS services
-✅ Writing & deploying AWS Lambda in Python
-✅ Using Terraform for declarative infrastructure
-✅ Handling CORS and API integration
-✅ Debugging CloudWatch logs effectively
-✅ Creating a public-facing cloud-native app
+- ✅ Hands-on experience with AWS services
+- ✅ Writing & deploying AWS Lambda in Python
+- ✅ Using Terraform for declarative infrastructure
+- ✅ Handling CORS and API integration
+- ✅ Debugging CloudWatch logs effectively
+- ✅ Creating a public-facing cloud-native app
 

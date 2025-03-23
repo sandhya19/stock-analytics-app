@@ -4,10 +4,9 @@ A fully serverless, secure, and scalable application that fetches real-time stoc
 
 ---
 
-## 🌐 Live Demo
+## 🎥 Live Demo
 
-🔗 **[Try the App](https://d3gpoigths4t2q.cloudfront.net/)**  
-
+![Live Demo](demo/demo.gif)
 
 ---
 
@@ -91,8 +90,6 @@ Public read access limited only to frontend assets
 - ✅ Debugging CloudWatch logs effectively
 - ✅ Creating a public-facing cloud-native app
 
-## 🎥 Live Demo
 
-![Live Demo](demo/demo.gif)
 
 

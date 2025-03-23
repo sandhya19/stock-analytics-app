@@ -6,7 +6,7 @@ A fully serverless, secure, and scalable application that fetches real-time stoc
 
 ## 🌐 Live Demo
 
-🔗 **[Try the App](https://<your-cloudfront-distribution>.cloudfront.net)**  
+🔗 **[Try the App](https://d3gpoigths4t2q.cloudfront.net/)**  
 
 
 ---

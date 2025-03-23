@@ -91,3 +91,8 @@ Public read access limited only to frontend assets
 - ✅ Debugging CloudWatch logs effectively
 - ✅ Creating a public-facing cloud-native app
 
+## 🎥 Live Demo
+
+![Live Demo](demo/demo.gif)
+
+
